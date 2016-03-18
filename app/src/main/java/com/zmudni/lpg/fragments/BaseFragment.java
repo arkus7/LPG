@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.zmudni.lpg.activities.BaseActivity;
+
 import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment {
@@ -31,6 +33,10 @@ public abstract class BaseFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    public void showFragment(BaseFragment fragment, String tag) {
+        ((BaseActivity)getActivity()).showFragment(fragment, tag);
     }
 
 }
