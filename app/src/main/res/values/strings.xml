@@ -12,8 +12,7 @@
         <item>żółty</item>
         <item>pomarańczowy</item>
         <item>fioletowy</item>
-        <item>seledynowy</item>
-        <item>beż</item>
+        <item>beżowy</item>
         <item>brązowy</item>
         <item>granatowy</item>
         <item>jabłko</item>
@@ -65,7 +64,6 @@
         <item>yellow</item>
         <item>orange</item>
         <item>purple</item>
-        <item>celadon</item>
         <item>beige</item>
         <item>brown</item>
         <item>navy blue</item>
@@ -118,7 +116,6 @@
         <item>gelb</item>
         <item>orange</item>
         <item>violett</item>
-        <item>seladongrün</item>
         <item>beige</item>
         <item>braun</item>
         <item>dunkelblau</item>
@@ -157,5 +154,57 @@
         <item>die Broccoli</item>
         <item>der Knoblauch</item>
         <item>die Wassermelone</item>
+    </string-array>
+
+    <string-array name="japanese">
+        <item>しろ</item>
+        <item>くろ</item>
+        <item>あか</item>
+        <item>みどり</item>
+        <item>あお</item>
+        <item>ピンク</item>
+        <item>はいいろ</item>
+        <item>みずいろ</item>
+        <item>きいろ</item>
+        <item>オレンジいろ</item>
+        <item>むらさき</item>
+        <item>あまいろ</item>
+        <item>ちゃいろ</item>
+        <item>こん</item>
+        <item>りんご</item>
+        <item>ペア</item>
+        <item>さくらんぼ</item>
+        <item>グレープ</item>
+        <item>バナナ</item>
+        <item>パイナップル</item>
+        <item>もも</item>
+        <item>アンズ</item>
+        <item>スモモ</item>
+        <item>レモン</item>
+        <item>グレープフルーツ</item>
+        <item>オレンジ</item>
+        <item>グスベリ</item>
+        <item>ラズベリー</item>
+        <item>カシス</item>
+        <item>フサスグリ</item>
+        <item>いちご</item>
+        <item>ブルーベリー</item>
+        <item>ブラックベリー</item>
+        <item>キウイ</item>
+        <item>にんじん</item>
+        <item>じゃがいも</item>
+        <item>たまねぎ</item>
+        <item>キュウリ</item>
+        <item>パプリカ</item>
+        <item>トマト</item>
+        <item>ビート</item>
+        <item>キャベツ</item>
+        <item>エンドウまめ</item>
+        <item>ほうれんそう</item>
+        <item>かぼちゃ</item>
+        <item>なす</item>
+        <item>ブロコリ</item>
+        <item>にんにく</item>
+        <item>すいか</item>
     </string-array>
 </resources>
