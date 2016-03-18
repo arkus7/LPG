@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 
 import com.zmudni.lpg.CircleObject;
+import com.zmudni.lpg.Creature;
 
 public class CanvasFactory {
     public static Canvas canvas;
@@ -25,6 +26,11 @@ public class CanvasFactory {
 
     public CanvasFactory drawCircleObject(CircleObject object) {
         canvas.drawCircle(object.getX(), object.getY(), object.getRadius(), new Paint());
+        return this;
+    }
+
+    public CanvasFactory drawCreature(Creature creature) {
+        canvas.drawBitmap(creature.getBitmap(), creature.getX(), creature.getY(), null);
         return this;
     }
 
