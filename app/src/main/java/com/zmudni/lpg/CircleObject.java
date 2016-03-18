@@ -23,5 +23,27 @@ public class CircleObject extends Entity{
        return Math.sqrt(Math.pow(secondObject.centerX - this.centerX,2)+ Math.pow(secondObject.centerY-this.centerY,2)) <= this.radius+secondObject.radius;
     }
 
+    public float getCenterX() {
+        return centerX;
+    }
 
+    public void setCenterX(float centerX) {
+        this.centerX = centerX;
+    }
+
+    public float getCenterY() {
+        return centerY;
+    }
+
+    public void setCenterY(float centerY) {
+        this.centerY = centerY;
+    }
+
+    public float getRadius() {
+        return radius;
+    }
+
+    public void setRadius(float radius) {
+        this.radius = radius;
+    }
 }
