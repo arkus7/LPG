@@ -1,16 +1,18 @@
 package com.zmudni.lpg;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Shirru on 2016-03-18.
  */
 public class Entity {
     protected float x;
     protected float y;
-    protected String imgPath;
+    protected Bitmap icon;
 
-    public Entity(float x, float y, String imgPath) {
+    public Entity(float x, float y, Bitmap icon) {
         this.x = x;
-        this.imgPath = imgPath;
+        this.icon = icon;
         this.y = y;
     }
 
@@ -22,12 +24,12 @@ public class Entity {
         this.x = x;
     }
 
-    public String getImgPath() {
-        return imgPath;
+    public Bitmap getBitmap() {
+        return icon;
     }
 
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
+    public void setBitmap(Bitmap icon) {
+        this.icon = icon;
     }
 
     public float getY() {
