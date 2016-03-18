@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">LPG</string>
     <string-array name="polish">
+        <item>powietrze</item>
+        <item>ogień</item>
+        <item>ziemia</item>
+        <item>woda</item>
         <item>biały</item>
         <item>czarny</item>
         <item>czerwony</item>
@@ -53,6 +57,10 @@
     </string-array>
 
     <string-array name="english">
+        <item>air</item>
+        <item>fire</item>
+        <item>earth</item>
+        <item>water</item>
         <item>white</item>
         <item>black</item>
         <item>red</item>
@@ -105,6 +113,10 @@
     </string-array>
 
     <string-array name="german">
+        <item>die Luft</item>
+        <item>das Feuer</item>
+        <item>die Erde</item>
+        <item>das Wasser</item>
         <item>weiß</item>
         <item>schwarz</item>
         <item>rot</item>
@@ -157,6 +169,10 @@
     </string-array>
 
     <string-array name="japanese">
+        <item>くうき</item>
+        <item>ひ</item>
+        <item>ち</item>
+        <item>みず</item>
         <item>しろ</item>
         <item>くろ</item>
         <item>あか</item>
