@@ -1,25 +1,25 @@
 package com.zmudni.lpg;
 
-import android.graphics.Point;
-
 /**
  * Created by Shirru on 2016-03-18.
  */
 public class Entity {
-    protected Point location;
+    protected float x;
+    protected float y;
+    protected String imgPath;
 
-    public Entity(Point location, String imgPath) {
-        this.location = location;
+    public Entity(float x, float y, String imgPath) {
+        this.x = x;
         this.imgPath = imgPath;
+        this.y = y;
     }
 
-    public Point getLocation() {
-
-        return location;
+    public float getX() {
+        return x;
     }
 
-    public void setLocation(Point location) {
-        this.location = location;
+    public void setX(float x) {
+        this.x = x;
     }
 
     public String getImgPath() {
@@ -30,9 +30,11 @@ public class Entity {
         this.imgPath = imgPath;
     }
 
-    protected String imgPath;
+    public float getY() {
+        return y;
+    }
 
-
-
-
+    public void setY(float y) {
+        this.y = y;
+    }
 }
