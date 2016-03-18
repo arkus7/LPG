@@ -7,7 +7,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void init() {
-        runActivity(CatchColorCirclesActivity.class);
+        showFragment(new CatchColorCirclesFragment(), CatchColorCirclesFragment.TAG);
     }
 
     @Override
