@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zmudni.lpg.fragments.RpgFightFragment">
+
+
+    <SurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rpg_fight_surface_view" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apple"
+        android:id="@+id/answer1"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/answer4"
+        android:layout_toStartOf="@+id/answer4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orange"
+        android:id="@+id/answer4"
+        android:layout_below="@+id/answer1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banana"
+        android:id="@+id/answer3"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peach"
+        android:id="@+id/answer2"
+        android:layout_below="@+id/answer1"
+        android:layout_toLeftOf="@+id/answer4"
+        android:layout_toStartOf="@+id/answer4" />
+</RelativeLayout>

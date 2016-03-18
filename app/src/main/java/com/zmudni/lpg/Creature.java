@@ -19,4 +19,36 @@ public abstract class Creature extends Entity {
         this.name = name;
         this.damage = damage;
     }
+
+    public int getHeathPoints() {
+        return heathPoints;
+    }
+
+    public void setHeathPoints(int heathPoints) {
+        this.heathPoints = heathPoints;
+    }
+
+    public int getGoldHeld() {
+        return goldHeld;
+    }
+
+    public void setGoldHeld(int goldHeld) {
+        this.goldHeld = goldHeld;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 }

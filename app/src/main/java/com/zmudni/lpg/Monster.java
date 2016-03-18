@@ -46,13 +46,22 @@ public class Monster extends Creature {
         this.word = word;
     }
 
-    public void attack(Creature target) {
-        target.heathPoints-=this.damage;
+    public void attack(Player player) {
+
+        System.out.println("Gracz PRzed: "+player.heathPoints);
+        player.heathPoints-=this.damage;
+        System.out.println("Gracz Po: " + player.heathPoints);
+        if (player.heathPoints == 0) player.died();
         this.setUseHealthPoints(true);
     }
 
+
     public void died(Player player){
+        System.out.println(this.name + " has died");
         player.setExperience(player.getExperience()+this.experience);
+        player.goldHeld+=this.goldHeld;
         if (player.checkIfLevelUp()) player.LevelUp();
+        System.out.println("Current exp: "+player.getExperience() + " next lvl: "+player.getNextLevelOn()+" Current lvl: " + player.getCurrentLevel() + "HP: "+ player.heathPoints);
+
     }
 }
