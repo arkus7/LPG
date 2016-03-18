@@ -1,3 +1,161 @@
 <resources>
     <string name="app_name">LPG</string>
+    <string-array name="polish">
+        <item>biały</item>
+        <item>czarny</item>
+        <item>czerwony</item>
+        <item>zielony</item>
+        <item>niebieski</item>
+        <item>różowy</item>
+        <item>szary</item>
+        <item>błękitny</item>
+        <item>żółty</item>
+        <item>pomarańczowy</item>
+        <item>fioletowy</item>
+        <item>seledynowy</item>
+        <item>beż</item>
+        <item>brązowy</item>
+        <item>granatowy</item>
+        <item>jabłko</item>
+        <item>gruszka</item>
+        <item>wiśnia</item>
+        <item>winogrono</item>
+        <item>banan</item>
+        <item>ananas</item>
+        <item>brzoskwinia</item>
+        <item>morela</item>
+        <item>śliwka</item>
+        <item>cytryna</item>
+        <item>grejpfrut</item>
+        <item>pomarańcza</item>
+        <item>agrest</item>
+        <item>malina</item>
+        <item>czarna porzeczka</item>
+        <item>czerwona porzeczka</item>
+        <item>truskawka</item>
+        <item>jagoda</item>
+        <item>jeżyna</item>
+        <item>kiwi</item>
+        <item>marchew</item>
+        <item>ziemniak</item>
+        <item>cebula</item>
+        <item>ogórek</item>
+        <item>papryka</item>
+        <item>pomidor</item>
+        <item>burak</item>
+        <item>kapusta</item>
+        <item>groszek</item>
+        <item>szpinak</item>
+        <item>dynia</item>
+        <item>bakłażan</item>
+        <item>brokuł</item>
+        <item>czosnek</item>
+        <item>arbuz</item>
+    </string-array>
+
+    <string-array name="english">
+        <item>white</item>
+        <item>black</item>
+        <item>red</item>
+        <item>green</item>
+        <item>blue</item>
+        <item>pink</item>
+        <item>grey</item>
+        <item>azure</item>
+        <item>yellow</item>
+        <item>orange</item>
+        <item>purple</item>
+        <item>celadon</item>
+        <item>beige</item>
+        <item>brown</item>
+        <item>navy blue</item>
+        <item>apple</item>
+        <item>pear</item>
+        <item>cherry</item>
+        <item>grape</item>
+        <item>banana</item>
+        <item>pineapple</item>
+        <item>peach</item>
+        <item>apricot</item>
+        <item>plum</item>
+        <item>lemon</item>
+        <item>grapefruit</item>
+        <item>orange</item>
+        <item>gooseberry</item>
+        <item>raspberry</item>
+        <item>black currant</item>
+        <item>red currant</item>
+        <item>strawberry</item>
+        <item>blueberry</item>
+        <item>blackberry</item>
+        <item>kiwi fruit</item>
+        <item>carrot</item>
+        <item>potato</item>
+        <item>onion</item>
+        <item>cucumber</item>
+        <item>pepper</item>
+        <item>tomato</item>
+        <item>beetroot</item>
+        <item>cabbage</item>
+        <item>pea</item>
+        <item>spinach</item>
+        <item>pumpkin</item>
+        <item>eggplant</item>
+        <item>broccoli</item>
+        <item>garlic</item>
+        <item>watermelon</item>
+    </string-array>
+
+    <string-array name="german">
+        <item>weiß</item>
+        <item>schwarz</item>
+        <item>rot</item>
+        <item>grün</item>
+        <item>blau</item>
+        <item>rosa</item>
+        <item>grau</item>
+        <item>himmelblau</item>
+        <item>gelb</item>
+        <item>orange</item>
+        <item>violett</item>
+        <item>seladongrün</item>
+        <item>beige</item>
+        <item>braun</item>
+        <item>dunkelblau</item>
+        <item>der Apfel</item>
+        <item>die Birne</item>
+        <item>die Kiersche</item>
+        <item>die Traube</item>
+        <item>die Banane</item>
+        <item>die Ananas</item>
+        <item>die Pfirsich</item>
+        <item>die Aprikose</item>
+        <item>die Pflaume</item>
+        <item>die Zitrone</item>
+        <item>die Pampelmuse</item>
+        <item>die Orange</item>
+        <item>die Stachelbeere</item>
+        <item>die Himbeere</item>
+        <item>die scharze Johannisbeere</item>
+        <item>die rote Johannisbeere</item>
+        <item>die Erdbeere</item>
+        <item>die Blaubeere</item>
+        <item>die Brombeere</item>
+        <item>die Kiwi</item>
+        <item>die Karotte</item>
+        <item>die Kartoffel</item>
+        <item>die Zwiebel</item>
+        <item>die Gurke</item>
+        <item>die Paprika</item>
+        <item>die Tomate</item>
+        <item>die Bete</item>
+        <item>der Kohl</item>
+        <item>die Ebste</item>
+        <item>der Spinat</item>
+        <item>der Kürbis</item>
+        <item>die Aubergine</item>
+        <item>die Broccoli</item>
+        <item>der Knoblauch</item>
+        <item>die Wassermelone</item>
+    </string-array>
 </resources>
