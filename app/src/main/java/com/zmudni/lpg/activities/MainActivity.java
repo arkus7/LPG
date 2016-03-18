@@ -1,13 +1,13 @@
 package com.zmudni.lpg.activities;
 
 import com.zmudni.lpg.R;
+import com.zmudni.lpg.fragments.CatchColorCirclesFragment;
 
 public class MainActivity extends BaseActivity {
 
-
     @Override
     protected void init() {
-
+        runActivity(CatchColorCirclesActivity.class);
     }
 
     @Override
