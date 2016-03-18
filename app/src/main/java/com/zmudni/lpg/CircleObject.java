@@ -1,5 +1,7 @@
 package com.zmudni.lpg;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by Shirru on 2016-03-18.
  */
@@ -13,8 +15,8 @@ public class CircleObject extends Entity{
         this.centerY = this.y + dy;
     }
 
-    public CircleObject(float x, float y, String imgPath,float radius) {
-        super(x, y, imgPath);
+    public CircleObject(float x, float y, Bitmap icon,float radius) {
+        super(x, y, icon);
         this.radius = radius;
         this.offset(this.radius,this.radius);
     }
