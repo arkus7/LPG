@@ -17,6 +17,7 @@ public class Monster extends Creature {
         isBoss = false;
         useHealthPoints = false;
         this.experience = experience;
+        this.word = word;
     }
 
 

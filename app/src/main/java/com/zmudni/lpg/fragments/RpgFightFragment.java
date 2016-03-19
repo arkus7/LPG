@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.zmudni.lpg.Creature;
 import com.zmudni.lpg.Monster;
 import com.zmudni.lpg.Player;
 import com.zmudni.lpg.R;
@@ -51,27 +52,19 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
         }
         if (monster.getHeathPoints() < 0) enemy.remove(currentEnemy);
         currentEnemy++;
-        currentEnemy=currentEnemy%enemy.size();
+        currentEnemy=currentEnemy % enemy.size();
     }
 
     public void draw(SurfaceHolder holder){
-//        SurfaceHelper.drawCreature(surfaceView.getHolder(),player);
-//        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(0));
-//        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(1));
-//   SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(i));
 
         Canvas canvas = new CanvasFactory(holder.lockCanvas())
                 .drawCreature(player)
-                .drawCreature(enemy.get(0))
-                .drawCreature(enemy.get(1))
+                .drawCreatureCollection(enemy)
                 .build();
         holder.unlockCanvasAndPost(canvas);
+//
 
-//        Canvas canvas1;
-//        for (Monster monster : enemy) {
-//            canvas1 = new CanvasFactory(holder.lockCanvas()).drawCreature(monster).build();
-//            holder.unlockCanvasAndPost(canvas1);
-//        }
+
 
     }
 
@@ -119,11 +112,13 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     @Override
     public void init() {
-        player = new Player(500,1000, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy),"Shir",10);
+
+        player = new Player(1000,500, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy),"Shir",10);
         enemy = new ArrayList<>();
         currentEnemy = 1;
-        enemy.add(new Monster(100,1000,BitmapFactory.decodeResource(getResources(),R.mipmap.apple),15,10,"Slime",2,"apple",50));
-        enemy.add(new Monster(150,1000,BitmapFactory.decodeResource(getResources(),R.mipmap.cherry),15,10,"Wolf",2,"peach",50));
+        enemy.add(new Monster(100,500,BitmapFactory.decodeResource(getResources(),R.mipmap.apple),15,10,"Slime",2,"apple",50));
+        enemy.add(new Monster(200,600,BitmapFactory.decodeResource(getResources(),R.mipmap.cherry),15,10,"Wolf",2,"peach",50));
+        enemy.add(new Monster(200,600,BitmapFactory.decodeResource(getResources(),R.mipmap.banana),15,10,"Scorpion",2,"banana",50));
         surfaceView.getHolder().addCallback(this);
     }
 
