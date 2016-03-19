@@ -2,6 +2,7 @@ package com.zmudni.lpg.fragments;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +16,7 @@ import android.widget.Button;
 import com.zmudni.lpg.Monster;
 import com.zmudni.lpg.Player;
 import com.zmudni.lpg.R;
-import com.zmudni.lpg.helpers.SurfaceHelper;
+import com.zmudni.lpg.helpers.CanvasFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,11 +54,24 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
         currentEnemy=currentEnemy%enemy.size();
     }
 
-    public void draw(){
-        SurfaceHelper.drawCreature(surfaceView.getHolder(),player);
-        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(0));
-        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(1));
-         //   SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(i));
+    public void draw(SurfaceHolder holder){
+//        SurfaceHelper.drawCreature(surfaceView.getHolder(),player);
+//        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(0));
+//        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(1));
+//   SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(i));
+
+        Canvas canvas = new CanvasFactory(holder.lockCanvas())
+                .drawCreature(player)
+                .drawCreature(enemy.get(0))
+                .drawCreature(enemy.get(1))
+                .build();
+        holder.unlockCanvasAndPost(canvas);
+
+//        Canvas canvas1;
+//        for (Monster monster : enemy) {
+//            canvas1 = new CanvasFactory(holder.lockCanvas()).drawCreature(monster).build();
+//            holder.unlockCanvasAndPost(canvas1);
+//        }
 
     }
 
@@ -70,7 +84,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        this.draw();
+        this.draw(surfaceView.getHolder());
     }
 
     @Override
