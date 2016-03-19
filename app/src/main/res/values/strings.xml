@@ -35,7 +35,7 @@
         <item>granatowy</item>
     </string-array>
 
-    <string-array name="polish_fruitvege">
+    <string-array name="polish_fruits_and_vegetable">
         <item>jabłko</item>
         <item>gruszka</item>
         <item>wiśnia</item>
@@ -89,7 +89,7 @@
         <item>navy blue</item>
  </string-array>
 
-<string-array name="english_fruitvege">
+<string-array name="english_fruits_and_vegetable">
         <item>apple</item>
         <item>pear</item>
         <item>cherry</item>
@@ -143,7 +143,7 @@
         <item>dunkelblau</item>
     </string-array>
 
-    <string-array name="german_fruitvege">
+    <string-array name="german_fruits_and_vegetable">
         <item>der Apfel</item>
         <item>die Birne</item>
         <item>die Kiersche</item>
@@ -197,7 +197,7 @@
         <item>こん</item>
     </string-array>
 
-    <string-array name="japanese_fruitvege">
+    <string-array name="japanese_fruits_and_vegetable">
         <item>りんご</item>
         <item>ペア</item>
         <item>さくらんぼ</item>

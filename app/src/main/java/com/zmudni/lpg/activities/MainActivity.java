@@ -3,7 +3,6 @@ package com.zmudni.lpg.activities;
 import com.zmudni.lpg.R;
 import com.zmudni.lpg.fragments.CatchColorCirclesFragment;
 import com.zmudni.lpg.fragments.RpgFightFragment;
-import com.zmudni.lpg.fragments.StartScreenFragment;
 
 public class MainActivity extends BaseActivity {
 
@@ -12,7 +11,7 @@ public class MainActivity extends BaseActivity {
     //        showFragment(new CatchColorCirclesFragment(), CatchColorCirclesFragment.TAG);
 
     protected void init() {
-        showFragment(new StartScreenFragment(), CatchColorCirclesFragment.TAG, false);
+        showFragment(new RpgFightFragment(), CatchColorCirclesFragment.TAG, false);
     }
 
     @Override

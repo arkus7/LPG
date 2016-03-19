@@ -38,7 +38,7 @@ public class Player extends Creature {
     }
 
     public Player(float x, float y, Bitmap icon, String name, int damage) {
-        super(x, y, icon,5,0, name, damage);
+        super(x, y, icon,10,0, name, damage);
         this.currentLevel = 1;
         this.nextLevelOn = 100;
         experience = 0;
