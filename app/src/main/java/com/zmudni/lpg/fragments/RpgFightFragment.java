@@ -69,7 +69,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    final Toast toast = Toast.makeText(getContext(),"Prawidłowa odpowiedź to: " + enemies.get(currentEnemy).getName(), Toast.LENGTH_SHORT);
+                    final Toast toast = Toast.makeText(getContext(), String.format(getResources().getString(R.string.elements_game_bad_answer), enemies.get(currentEnemy).getName()), Toast.LENGTH_SHORT);
                     toast.show();
 
                     Handler handler = new Handler();
@@ -78,7 +78,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
                         public void run() {
                             toast.cancel();
                         }
-                    }, 500);
+                    }, 700);
                 }});
         }
         if (monster.getHeathPoints() <= 0){
