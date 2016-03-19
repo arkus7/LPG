@@ -1,16 +1,9 @@
 package com.zmudni.lpg.fragments;
 
-import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.zmudni.lpg.Monster;
@@ -22,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Callback {
@@ -43,38 +35,24 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     private List<Monster> enemy;
     private int currentEnemy;
 
-    public void checkAnswer(Monster monster, String answer, Player player){
-        if (monster.getWord().toLowerCase().equalsIgnoreCase(answer)){
+    public void checkAnswer(Monster monster, String answer, Player player) {
+        if (monster.getWord().toLowerCase().equalsIgnoreCase(answer)) {
             player.attack(monster);
         } else {
             monster.attack(player);
         }
         if (monster.getHeathPoints() < 0) enemy.remove(currentEnemy);
         currentEnemy++;
-        currentEnemy=currentEnemy%enemy.size();
+        currentEnemy = currentEnemy % enemy.size();
     }
 
-    public void draw(SurfaceHolder holder){
-//        SurfaceHelper.drawCreature(surfaceView.getHolder(),player);
-//        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(0));
-//        SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(1));
-//   SurfaceHelper.drawCreature(surfaceView.getHolder(),enemy.get(i));
-
+    public void draw(SurfaceHolder holder) {
         Canvas canvas = new CanvasFactory(holder.lockCanvas())
                 .drawCreature(player)
-                .drawCreature(enemy.get(0))
-                .drawCreature(enemy.get(1))
+                .drawCreatureCollection(enemy)
                 .build();
         holder.unlockCanvasAndPost(canvas);
-
-//        Canvas canvas1;
-//        for (Monster monster : enemy) {
-//            canvas1 = new CanvasFactory(holder.lockCanvas()).drawCreature(monster).build();
-//            holder.unlockCanvasAndPost(canvas1);
-//        }
-
     }
-
 
 
     @Override
@@ -94,7 +72,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     @OnClick(R.id.answer1)
     public void onAnswer1Click() {
-        checkAnswer(enemy.get(currentEnemy), answer1.getText().toString(),player);
+        checkAnswer(enemy.get(currentEnemy), answer1.getText().toString(), player);
     }
 
     @OnClick(R.id.answer2)
@@ -119,11 +97,13 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     @Override
     public void init() {
-        player = new Player(500,1000, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy),"Shir",10);
+
+        player = new Player(1000, 500, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy), "Shir", 10);
         enemy = new ArrayList<>();
         currentEnemy = 1;
-        enemy.add(new Monster(100,1000,BitmapFactory.decodeResource(getResources(),R.mipmap.apple),15,10,"Slime",2,"apple",50));
-        enemy.add(new Monster(150,1000,BitmapFactory.decodeResource(getResources(),R.mipmap.cherry),15,10,"Wolf",2,"peach",50));
+        enemy.add(new Monster(100, 500, BitmapFactory.decodeResource(getResources(), R.mipmap.apple), 15, 10, "Slime", 2, "apple", 50));
+        enemy.add(new Monster(200, 600, BitmapFactory.decodeResource(getResources(), R.mipmap.cherry), 15, 10, "Wolf", 2, "peach", 50));
+        enemy.add(new Monster(200, 600, BitmapFactory.decodeResource(getResources(), R.mipmap.banana), 15, 10, "Scorpion", 2, "banana", 50));
         surfaceView.getHolder().addCallback(this);
     }
 
