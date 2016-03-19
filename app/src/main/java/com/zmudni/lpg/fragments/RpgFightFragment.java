@@ -3,11 +3,14 @@ package com.zmudni.lpg.fragments;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 
+import com.zmudni.lpg.CircleObject;
 import com.zmudni.lpg.Entity;
 import com.zmudni.lpg.Monster;
 import com.zmudni.lpg.Player;
@@ -46,17 +49,18 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     private List<String> fruitsJp;
     private int currentEnemy;
     Timer timer;
+    Timer timer2;
     protected int currentAnswerTime = 0;
     protected final int maxAnswerTime = 10;
+    protected int animationPart = 4;
 
-    protected void drawDamage(SurfaceHolder holder){
 
-    }
 
     public void checkAnswer(Monster monster, String answer, Player player) {
         if (monster.getName().toLowerCase().equalsIgnoreCase(answer)) {
             player.attack(monster);
-
+            animationPart = 0;
+            timer.scheduleAtFixedRate(new DelayTimeTimerTask(), 0, 1000);
             currentAnswerTime = 0;
         } else {
             monster.attack(player);
@@ -114,6 +118,38 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
             }
         });
 
+    }
+
+    protected void drawDamage(SurfaceHolder holder){
+        Paint paint = new Paint();
+        CircleObject c1 = new CircleObject(enemies.get(currentEnemy).getX(),enemies.get(currentEnemy).getX(),null,5);
+        switch(animationPart){
+            case 0:
+                animationPart++;
+                paint.setColor(Color.BLUE);
+
+                Canvas canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
+                holder.unlockCanvasAndPost(canvas);
+                break;
+            case 1:
+                animationPart++;
+                paint.setColor(Color.CYAN);
+                canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
+                holder.unlockCanvasAndPost(canvas);
+                break;
+            case 2:
+                animationPart++;
+                paint.setColor(Color.RED);
+                canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
+                holder.unlockCanvasAndPost(canvas);
+                break;
+            case 3:
+                animationPart++;
+                paint.setColor(Color.GREEN);
+                canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
+                holder.unlockCanvasAndPost(canvas);
+                break;
+        }
     }
 
     @Override
@@ -204,6 +240,15 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
             } else {
                 currentAnswerTime++;
             }
+
+        }
+    }
+
+    class damageAnimationTimerTask extends TimerTask{
+
+        @Override
+        public void run() {
+                drawDamage(surfaceView.getHolder());
 
         }
     }

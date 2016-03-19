@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.RectF;
 
 import com.zmudni.lpg.CircleObject;
 import com.zmudni.lpg.Creature;
@@ -36,17 +37,23 @@ public class CanvasFactory {
         Paint paint = new Paint();
         paint.setTextSize(FONT_SIZE);
         paint.setARGB(255,255,255,255);
-        canvas.drawText(text,x,y,paint);
+        canvas.drawText(text, x, y, paint);
         return this;
     }
 
     public CanvasFactory setBackgroudImage(Bitmap bitmap) {
-        canvas.drawBitmap(bitmap, 0, 0, null);
+        canvas.drawBitmap(bitmap, null, new RectF(0, 0, 1280, 720), null);
+        //canvas.drawBitmap(bitmap, 0, 0, null);
+        return this;
+    }
+
+    public CanvasFactory drawCircleObject(CircleObject object, Paint paint) {
+        canvas.drawCircle(object.getX(), object.getY(), object.getRadius(), paint);
         return this;
     }
 
     public CanvasFactory drawCircleObject(CircleObject object) {
-        canvas.drawCircle(object.getX(), object.getY(), object.getRadius(), new Paint());
+        canvas.drawCircle(object.getX(), object.getY(), object.getRadius(),new Paint());
         return this;
     }
 
