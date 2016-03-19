@@ -49,12 +49,13 @@ public class ElementsGameFragment extends BaseFragment {
         if (elementsViewsDictionary.get(view.getId()).equals(goodAnswer)) {
             correctAnswerCounter++;
             alreadyQuestioned.add(goodAnswer);
-            ToastHelper.show(getContext(), "asdasdasdas");
-            if(correctAnswerCounter < MAX_QUESTIONS) {
+            if (correctAnswerCounter < MAX_QUESTIONS) {
                 init();
             } else {
-                // todo: PreRpgFragment run
+                showFragment(new PreRpgFightFragment(), "", true);
             }
+        } else {
+            ToastHelper.show(getContext(), String.format(getResources().getString(R.string.elements_game_bad_answer), goodAnswer));
         }
     }
 
