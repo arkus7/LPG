@@ -6,7 +6,6 @@ import android.graphics.Bitmap;
  * Created by Shirru on 2016-03-18.
  */
 public class Player extends Creature {
-    private int maxHealthPoints;
     private int currentLevel;
     private int experience;
     private int nextLevelOn;
@@ -41,10 +40,10 @@ public class Player extends Creature {
     public Player(float x, float y, Bitmap icon, String name, int damage) {
         super(x, y, icon,5,0, name, damage);
         this.currentLevel = 1;
-        this.maxHealthPoints = 5;
         this.nextLevelOn = 100;
         experience = 0;
     }
+
 
     public void attack(Monster target){
         if (target.isUseHealthPoints()){
