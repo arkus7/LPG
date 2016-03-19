@@ -7,7 +7,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import com.zmudni.lpg.R;
-import com.zmudni.lpg.helpers.SurfaceHelper;
 import com.zmudni.lpg.helpers.ToastHelper;
 
 import butterknife.Bind;
@@ -33,7 +32,6 @@ public class CatchColorCirclesFragment extends BaseFragment implements SurfaceHo
     public void surfaceCreated(SurfaceHolder holder) {
         ToastHelper.show(getContext(), "surfaceCreated");
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-        SurfaceHelper.setBackgroudImage(holder, bitmap);
     }
 
     @Override
