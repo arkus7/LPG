@@ -22,6 +22,9 @@
         <item>beżowy</item>
         <item>brązowy</item>
         <item>granatowy</item>
+    </string-array>
+
+    <string-array name="polish.fruitvege">
         <item>jabłko</item>
         <item>gruszka</item>
         <item>wiśnia</item>
@@ -34,36 +37,31 @@
         <item>cytryna</item>
         <item>grejpfrut</item>
         <item>pomarańcza</item>
-        <item>agrest</item>
-        <item>malina</item>
-        <item>czarna porzeczka</item>
-        <item>czerwona porzeczka</item>
         <item>truskawka</item>
         <item>jagoda</item>
-        <item>jeżyna</item>
         <item>kiwi</item>
         <item>marchew</item>
         <item>ziemniak</item>
         <item>cebula</item>
-        <item>ogórek</item>
         <item>papryka</item>
         <item>pomidor</item>
         <item>burak</item>
         <item>kapusta</item>
         <item>groszek</item>
-        <item>szpinak</item>
         <item>dynia</item>
         <item>bakłażan</item>
-        <item>brokuł</item>
         <item>czosnek</item>
         <item>arbuz</item>
     </string-array>
 
-    <string-array name="english">
+    <string-array name="english.elements">
         <item>air</item>
         <item>fire</item>
         <item>earth</item>
         <item>water</item>
+    </string-array>
+
+    <string-array name="english.colours">
         <item>white</item>
         <item>black</item>
         <item>red</item>
@@ -78,6 +76,9 @@
         <item>beige</item>
         <item>brown</item>
         <item>navy blue</item>
+ </string-array>
+
+<string-array name="english.fruitvege">
         <item>apple</item>
         <item>pear</item>
         <item>cherry</item>
@@ -90,36 +91,31 @@
         <item>lemon</item>
         <item>grapefruit</item>
         <item>orange</item>
-        <item>gooseberry</item>
-        <item>raspberry</item>
-        <item>black currant</item>
-        <item>red currant</item>
         <item>strawberry</item>
         <item>blueberry</item>
-        <item>blackberry</item>
         <item>kiwi fruit</item>
         <item>carrot</item>
         <item>potato</item>
         <item>onion</item>
-        <item>cucumber</item>
         <item>pepper</item>
         <item>tomato</item>
         <item>beetroot</item>
         <item>cabbage</item>
         <item>pea</item>
-        <item>spinach</item>
         <item>pumpkin</item>
         <item>eggplant</item>
-        <item>broccoli</item>
         <item>garlic</item>
         <item>watermelon</item>
     </string-array>
 
-    <string-array name="german">
+    <string-array name="german.elements">
         <item>die Luft</item>
         <item>das Feuer</item>
         <item>die Erde</item>
         <item>das Wasser</item>
+    </string-array>
+
+    <string-array name="german.colours">
         <item>weiß</item>
         <item>schwarz</item>
         <item>rot</item>
@@ -134,6 +130,9 @@
         <item>beige</item>
         <item>braun</item>
         <item>dunkelblau</item>
+    </string-array>
+
+    <string-array name="german.fruitvege">
         <item>der Apfel</item>
         <item>die Birne</item>
         <item>die Kiersche</item>
@@ -146,36 +145,31 @@
         <item>die Zitrone</item>
         <item>die Pampelmuse</item>
         <item>die Orange</item>
-        <item>die Stachelbeere</item>
-        <item>die Himbeere</item>
-        <item>die scharze Johannisbeere</item>
-        <item>die rote Johannisbeere</item>
         <item>die Erdbeere</item>
         <item>die Blaubeere</item>
-        <item>die Brombeere</item>
         <item>die Kiwi</item>
         <item>die Karotte</item>
         <item>die Kartoffel</item>
         <item>die Zwiebel</item>
-        <item>die Gurke</item>
         <item>die Paprika</item>
         <item>die Tomate</item>
         <item>die Bete</item>
         <item>der Kohl</item>
         <item>die Ebste</item>
-        <item>der Spinat</item>
         <item>der Kürbis</item>
         <item>die Aubergine</item>
-        <item>die Broccoli</item>
         <item>der Knoblauch</item>
         <item>die Wassermelone</item>
     </string-array>
 
-    <string-array name="japanese">
+    <string-array name="japanese.elements">
         <item>くうき</item>
         <item>ひ</item>
         <item>ち</item>
         <item>みず</item>
+    </string-array>
+
+    <string-array name="japanese.colours">
         <item>しろ</item>
         <item>くろ</item>
         <item>あか</item>
@@ -190,6 +184,9 @@
         <item>あまいろ</item>
         <item>ちゃいろ</item>
         <item>こん</item>
+    </string-array>
+    
+    <string-array name="japanese.fruitvege">
         <item>りんご</item>
         <item>ペア</item>
         <item>さくらんぼ</item>
@@ -202,27 +199,19 @@
         <item>レモン</item>
         <item>グレープフルーツ</item>
         <item>オレンジ</item>
-        <item>グスベリ</item>
-        <item>ラズベリー</item>
-        <item>カシス</item>
-        <item>フサスグリ</item>
         <item>いちご</item>
         <item>ブルーベリー</item>
-        <item>ブラックベリー</item>
         <item>キウイ</item>
         <item>にんじん</item>
         <item>じゃがいも</item>
         <item>たまねぎ</item>
-        <item>キュウリ</item>
         <item>パプリカ</item>
         <item>トマト</item>
         <item>ビート</item>
         <item>キャベツ</item>
         <item>エンドウまめ</item>
         <item>ほうれんそう</item>
-        <item>かぼちゃ</item>
         <item>なす</item>
-        <item>ブロコリ</item>
         <item>にんにく</item>
         <item>すいか</item>
     </string-array>
