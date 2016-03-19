@@ -120,11 +120,11 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     public void endFightDraw(SurfaceHolder holder,boolean won){
 
         if (won) {
-            timer.cancel();
+//            timer.cancel();
             getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
             showFragment(new WonFragment(), "", false);
         } else {
-            timer.cancel();
+//            timer.cancel();
             getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
             showFragment(new FailedFragment(), "", false);
         }
@@ -136,13 +136,13 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     public void surfaceCreated(SurfaceHolder holder) {
         init();
         fightDraw(surfaceView.getHolder());
-        timer.scheduleAtFixedRate(new DelayTimeTimerTask(), 0, 1000);
+//        timer.scheduleAtFixedRate(new DelayTimeTimerTask(), 0, 1000);
     }
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
         this.fightDraw(surfaceView.getHolder());
-        timer.scheduleAtFixedRate(new DelayTimeTimerTask(),0,1000);
+//        timer.scheduleAtFixedRate(new DelayTimeTimerTask(),0,1000);
     }
 
     @Override
@@ -186,7 +186,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
         enemies = new ArrayList<>();
         //usedIndexes = new ArrayList<>();
         //deletedEnemies = new ArrayList<>();
-        timer = new Timer();
+//        timer = new Timer();
         createEntities();
 
         surfaceView.getHolder().addCallback(this);
@@ -206,11 +206,11 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
         answer2.setText(enemies.get(1).getName());
 
         index = randomIndex(0, elemntsPl.size()-1);
-        enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime2), 33, 25, elemntsPl.get(2).toLowerCase(), 4, elementsEn.get(2).toLowerCase(), 75));
+        enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime2), 20, 25, elemntsPl.get(2).toLowerCase(), 4, elementsEn.get(2).toLowerCase(), 75));
         answer3.setText(enemies.get(2).getName());
 
         index = randomIndex(0, elemntsPl.size()-1);
-        enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 50, 10, elemntsPl.get(3).toLowerCase(), 2, elementsEn.get(3).toLowerCase(), 25));
+        enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 25, 10, elemntsPl.get(3).toLowerCase(), 2, elementsEn.get(3).toLowerCase(), 25));
         answer4.setText(enemies.get(3).getName());
     }
 
