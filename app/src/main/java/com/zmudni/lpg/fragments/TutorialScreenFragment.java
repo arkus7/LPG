@@ -24,7 +24,7 @@ public class TutorialScreenFragment extends BaseFragment {
             historyBubble.setText(getString(R.string.history_part2));
             nextPartButton.setVisibility(View.GONE);
         } else {
-            showFragment(new StartScreenFragment(), "", true);
+            showFragment(new ElementsLearnFragment(), "", true);
         }
     }
 
