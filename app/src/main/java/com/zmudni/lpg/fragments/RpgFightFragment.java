@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -41,7 +42,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     Button answer4;
 
     private Player player;
-    private List<Monster> enemy;
+    private List<Monster> enemies;
     private int currentEnemy;
 
     public void checkAnswer(Monster monster, String answer, Player player){
@@ -50,24 +51,49 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
         } else {
             monster.attack(player);
         }
-        if (monster.getHeathPoints() < 0) enemy.remove(currentEnemy);
+
+        if (monster.getHeathPoints() <= 0){
+            enemies.remove(currentEnemy);
+        }
+        if (player.getHeathPoints() <= 0){
+            player.died();
+            endFightDraw(surfaceView.getHolder(), false);
+        }
         currentEnemy++;
-        currentEnemy=currentEnemy % enemy.size();
+        if(!enemies.isEmpty()) {
+            currentEnemy = currentEnemy % enemies.size();
+        } else {
+            endFightDraw(surfaceView.getHolder(), true);
+        }
+
+        startFightDraw(surfaceView.getHolder());
     }
 
-    public void draw(SurfaceHolder holder){
+    public void startFightDraw(SurfaceHolder holder){
+        if(!enemies.isEmpty()){
+            Canvas canvas = new Canvas();
 
-        Canvas canvas = new CanvasFactory(holder.lockCanvas())
-                .drawCreature(player)
-                .drawCreatureCollection(enemy)
-                .build();
-        holder.unlockCanvasAndPost(canvas);
-//
-
-
-
+            canvas = new CanvasFactory(holder.lockCanvas()).setBackgroundColor(getResources().getColor(R.color.colorPrimary))
+                    .drawCreature(player)
+                    .drawCreatureCollection(enemies)
+                    .build();
+            holder.unlockCanvasAndPost(canvas);
+        }
     }
 
+    public void endFightDraw(SurfaceHolder holder,boolean won){
+        if ( won == true) {
+            Canvas canvas = new CanvasFactory(holder.lockCanvas()).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark)).setText("You win", 400, 400, 80).build();
+            holder.unlockCanvasAndPost(canvas);
+        } else {
+            Canvas canvas = new CanvasFactory(holder.lockCanvas()).setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark)).setText("You lose",400,400,80).build();
+            holder.unlockCanvasAndPost(canvas);
+        }
+        answer1.setVisibility(View.GONE);
+        answer2.setVisibility(View.GONE);
+        answer3.setVisibility(View.GONE);
+        answer4.setVisibility(View.GONE);
+    }
 
 
     @Override
@@ -77,32 +103,33 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        this.draw(surfaceView.getHolder());
+        this.startFightDraw(surfaceView.getHolder());
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
 
+
     }
 
     @OnClick(R.id.answer1)
     public void onAnswer1Click() {
-        checkAnswer(enemy.get(currentEnemy), answer1.getText().toString(),player);
+        checkAnswer(enemies.get(currentEnemy), answer1.getText().toString().toLowerCase(),player);
     }
 
     @OnClick(R.id.answer2)
     public void onAnswer2Click() {
-        checkAnswer(enemy.get(currentEnemy), answer2.getText().toString(), player);
+        checkAnswer(enemies.get(currentEnemy), answer2.getText().toString().toLowerCase(), player);
     }
 
     @OnClick(R.id.answer3)
     public void onAnswer3Click() {
-        checkAnswer(enemy.get(currentEnemy), answer3.getText().toString(), player);
+        checkAnswer(enemies.get(currentEnemy), answer3.getText().toString().toLowerCase(), player);
     }
 
     @OnClick(R.id.answer4)
     public void onAnswer4Click() {
-        checkAnswer(enemy.get(currentEnemy), answer4.getText().toString(), player);
+        checkAnswer(enemies.get(currentEnemy), answer4.getText().toString().toLowerCase(), player);
     }
 
     @Override
@@ -114,11 +141,11 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     public void init() {
 
         player = new Player(1000,500, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy),"Shir",10);
-        enemy = new ArrayList<>();
-        currentEnemy = 1;
-        enemy.add(new Monster(100,500,BitmapFactory.decodeResource(getResources(),R.mipmap.apple),15,10,"Slime",2,"apple",50));
-        enemy.add(new Monster(200,600,BitmapFactory.decodeResource(getResources(),R.mipmap.cherry),15,10,"Wolf",2,"peach",50));
-        enemy.add(new Monster(200,600,BitmapFactory.decodeResource(getResources(),R.mipmap.banana),15,10,"Scorpion",2,"banana",50));
+        enemies = new ArrayList<>();
+        currentEnemy = 0;
+        enemies.add(new Monster(200, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.apple), 15, 10, "Slime", 2, "apple", 50));
+        enemies.add(new Monster(200, 300, BitmapFactory.decodeResource(getResources(), R.mipmap.cherry), 15, 10, "Wolf", 2, "peach", 50));
+        enemies.add(new Monster(200, 550, BitmapFactory.decodeResource(getResources(), R.mipmap.banana), 15, 10, "Scorpion", 2, "banana", 50));
         surfaceView.getHolder().addCallback(this);
     }
 

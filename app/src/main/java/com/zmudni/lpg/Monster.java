@@ -22,7 +22,6 @@ public class Monster extends Creature {
 
 
 
-
     public boolean isBoss() {
         return isBoss;
     }
