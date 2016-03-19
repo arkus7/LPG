@@ -16,6 +16,7 @@ import com.zmudni.lpg.Monster;
 import com.zmudni.lpg.Player;
 import com.zmudni.lpg.R;
 import com.zmudni.lpg.helpers.CanvasFactory;
+import com.zmudni.lpg.helpers.DisplayHelper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
