@@ -1,13 +1,13 @@
 package com.zmudni.lpg.fragments;
 
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.zmudni.lpg.CircleObject;
 import com.zmudni.lpg.R;
-import com.zmudni.lpg.helpers.SurfaceHelper;
+import com.zmudni.lpg.helpers.CanvasFactory;
 import com.zmudni.lpg.helpers.ToastHelper;
 
 import butterknife.Bind;
@@ -32,14 +32,16 @@ public class CatchColorCirclesFragment extends BaseFragment implements SurfaceHo
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         ToastHelper.show(getContext(), "surfaceCreated");
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
-        SurfaceHelper.setBackgroudImage(holder, bitmap);
     }
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
         ToastHelper.show(getContext(), "surfaceChanged");
-//        SurfaceHelper.setBackgroundColor(holder, R.color.colorAccent);
+        Canvas canvas = new CanvasFactory(holder.lockCanvas())
+                .setBackgroundColor(getResources().getColor(R.color.colorAccent))
+                .drawCircleObject(new CircleObject(300, 300, BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher), 200))
+                .build();
+        holder.unlockCanvasAndPost(canvas);
     }
 
     @Override
