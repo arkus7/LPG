@@ -33,7 +33,7 @@ public class TutorialScreenFragment extends BaseFragment {
 
     private Timer timer;
     private int delayTime = 0;
-    private final int MAX_WAIT_TIME = 6;
+    private final int MAX_WAIT_TIME = 2;
 
     @Override
     public int getLayout() {

@@ -82,12 +82,13 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     }
 
-    public void FightDraw(SurfaceHolder holder){
-        if(!enemies.isEmpty()){
-            Canvas canvas = new Canvas();
-            canvas = new CanvasFactory(holder.lockCanvas()).setBackgroudImage(BitmapFactory.decodeResource(getResources(),R.mipmap.meadow))
+    public void FightDraw(SurfaceHolder holder) {
+        if (! enemies.isEmpty()) {
+            Canvas canvas = new CanvasFactory(holder.lockCanvas()).setBackgroudImage(
+                    BitmapFactory.decodeResource(getResources(), R.mipmap.background),
+                    DisplayHelper.getScreenWidth(getActivity()), DisplayHelper.getScreenHeigth(getActivity()))
                     .drawCreature(player)
-                    .drawCreatureCollection(enemies,currentEnemy,entity)
+                    .drawCreatureCollection(enemies, currentEnemy, entity)
                     .build();
             holder.unlockCanvasAndPost(canvas);
         }

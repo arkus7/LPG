@@ -18,12 +18,13 @@ public class ElementsLearnFragment extends BaseFragment {
 
     @OnClick(R.id.next_part_button)
     public void onNextPartButtonClick() {
+        showFragment(new RpgFightFragment(), "", true);
         //todo: hadnle next part
     }
 
     private Timer timer;
     private int delayTime = 0;
-    private final int MAX_WAIT_TIME = 6;
+    private final int MAX_WAIT_TIME = 2;
 
     @Override
     public int getLayout() {
@@ -50,9 +51,9 @@ public class ElementsLearnFragment extends BaseFragment {
 
         @Override
         public void run() {
-            if(! isNextPartButtonShowed())
+            if (! isNextPartButtonShowed())
                 delayTime++;
-            if(delayTime >= MAX_WAIT_TIME) {
+            if (delayTime >= MAX_WAIT_TIME) {
                 delayTime = 0;
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
