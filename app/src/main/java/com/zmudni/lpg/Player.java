@@ -37,8 +37,8 @@ public class Player extends Creature {
         this.nextLevelOn = nextLevelOn;
     }
 
-    public Player(float x, float y, Bitmap icon, String name, int damage) {
-        super(x, y, icon,10,0, name, damage);
+    public Player(float x, float y, Bitmap icon, String name) {
+        super(x, y, icon,12,0, name, 5);
         this.currentLevel = 1;
         this.nextLevelOn = 100;
         experience = 0;
@@ -49,9 +49,7 @@ public class Player extends Creature {
         if (target.isUseHealthPoints()){
             target.heathPoints = 0;
         } else {
-            System.out.println(target.name + " PRzed: "+target.heathPoints);
             target.heathPoints-=this.damage;
-            System.out.println(target.name + "Po: "+target.heathPoints);
         }
 
         if(target.heathPoints <= 0) target.died(this);
@@ -61,7 +59,7 @@ public class Player extends Creature {
     public void LevelUp(){
 
         currentLevel++;
-        this.maxHealthPoints+=10;
+        this.maxHealthPoints+=3;
         this.heathPoints=this.maxHealthPoints;
         nextLevelOn = nextLevelOn*2;
     }
