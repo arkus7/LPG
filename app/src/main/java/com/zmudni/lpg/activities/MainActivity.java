@@ -11,7 +11,7 @@ public class MainActivity extends BaseActivity {
     //        showFragment(new CatchColorCirclesFragment(), CatchColorCirclesFragment.TAG);
 
     protected void init() {
-        showFragment(new RpgFightFragment(), CatchColorCirclesFragment.TAG);
+        showFragment(new RpgFightFragment(), CatchColorCirclesFragment.TAG, false);
     }
 
     @Override

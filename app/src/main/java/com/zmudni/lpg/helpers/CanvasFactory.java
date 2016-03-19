@@ -11,6 +11,7 @@ import com.zmudni.lpg.CircleObject;
 import com.zmudni.lpg.Creature;
 import com.zmudni.lpg.Entity;
 import com.zmudni.lpg.Monster;
+import com.zmudni.lpg.Player;
 import com.zmudni.lpg.R;
 
 import java.util.List;
@@ -52,10 +53,11 @@ public class CanvasFactory {
     public CanvasFactory drawCreature(Creature creature) {
         Paint paint = new Paint();
         paint.setTextSize(FONT_SIZE);
-        paint.setARGB(255,255,255, 255);
+        paint.setARGB(255, 255, 255, 255);
         canvas.drawBitmap(creature.getBitmap(), creature.getX(), creature.getY(), null);
-        canvas.drawText("HP: " + creature.getHeathPoints() + "/" + creature.getMaxHealthPoints(), creature.getX()+(((creature.getBitmap().getWidth())/2)-30), creature.getY()+creature.getBitmap().getHeight() + FONT_OFFSET_Y+20, paint);
-
+        canvas.drawText("HP: " + creature.getHeathPoints() + "/" + creature.getMaxHealthPoints(), creature.getX(), creature.getY() + creature.getBitmap().getHeight() + FONT_OFFSET_Y + 25, paint);
+        canvas.drawText("Lvl: " + ((Player) creature).getCurrentLevel(), creature.getX() , creature.getY() + creature.getBitmap().getHeight() + FONT_OFFSET_Y + 50, paint);
+        canvas.drawText("Exp: " + ((Player)creature).getExperience()+"/"+((Player)creature).getNextLevelOn(), creature.getX(), creature.getY() + creature.getBitmap().getHeight() + FONT_OFFSET_Y+75, paint);
         return this;
     }
 
@@ -73,7 +75,7 @@ public class CanvasFactory {
                 canvas.drawBitmap(entity.getBitmap(), entity.getX(), entity.getY(), null);
             }
             canvas.drawText(creature.getWord().toLowerCase(), creature.getX()+ creature.getBitmap().getWidth()+10, creature.getY()+((creature.getBitmap().getHeight())/2), paint);
-            canvas.drawText("HP: " + creature.getHeathPoints() + "/" + creature.getMaxHealthPoints(), creature.getX() + (((creature.getBitmap().getWidth()) / 2) - 15), creature.getY() + creature.getBitmap().getHeight() + FONT_OFFSET_Y-10, paint);
+            canvas.drawText("HP: " + creature.getHeathPoints() + "/" + creature.getMaxHealthPoints(), creature.getX()+50, creature.getY() + creature.getBitmap().getHeight() + FONT_OFFSET_Y-10, paint);
 
             i++;
         }
