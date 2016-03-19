@@ -143,28 +143,13 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     public void endFightDraw(SurfaceHolder holder,boolean won){
 
-        timer.cancel();
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                answer1.setVisibility(View.GONE);
-                answer2.setVisibility(View.GONE);
-                answer3.setVisibility(View.GONE);
-                answer4.setVisibility(View.GONE);
-            }
-        });
         if (won) {
-            Canvas canvas = new CanvasFactory(holder.lockCanvas())
-                    .setBackgroundColor(getResources().getColor(R.color.color_button)).setText("You win", 400, 400, 80).build();
-            holder.unlockCanvasAndPost(canvas);
             timer.cancel();
+            showFragment(new FailedFragment(), "", false);
         } else {
-            Canvas canvas = new CanvasFactory(holder.lockCanvas())
-                    .setBackgroundColor(getResources().getColor(R.color.color_button)).setText("You lose",400,400,80).build();
-            holder.unlockCanvasAndPost(canvas);
             timer.cancel();
             getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
-            showFragment(new MapFragment(), "", false);
+            showFragment(new FailedFragment(), "", false);
         }
 
     }
