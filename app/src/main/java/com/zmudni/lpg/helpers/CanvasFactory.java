@@ -53,6 +53,7 @@ public class CanvasFactory {
         return this;
     }
 
+
     public CanvasFactory drawCreatureCollection(List<Monster> creatures) {
         Paint paint = new Paint();
         paint.setTextSize(FONT_SIZE);
