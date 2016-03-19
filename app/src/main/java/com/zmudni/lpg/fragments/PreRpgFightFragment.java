@@ -9,6 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class PreRpgFightFragment extends BaseFragment {
@@ -38,6 +39,13 @@ public class PreRpgFightFragment extends BaseFragment {
 
     public boolean isNextPartButtonShowed() {
         return nextPartButton.getVisibility() == View.VISIBLE;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+        timer.cancel();
     }
 
     class NextPartTimerTask extends TimerTask {
