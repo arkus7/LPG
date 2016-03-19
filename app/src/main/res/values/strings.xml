@@ -2,7 +2,8 @@
     <string name="app_name">LPG</string>
     <string name="start.screen.text">Gotowy do nauki?\n Zaczynajmy!</string>
     <string name="start.screen.button">Start</string>
-    <string-array name="polish">
+    <string-array name="polish"
+        id="ASD">
         <item>powietrze</item>
         <item>ogień</item>
         <item>ziemia</item>
