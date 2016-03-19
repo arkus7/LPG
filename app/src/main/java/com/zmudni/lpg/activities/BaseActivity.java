@@ -44,4 +44,27 @@ public abstract class BaseActivity extends FragmentActivity {
         startActivity(i);
         finish();
     }
+
+    public void showFragment(BaseFragment fragment, String tag, boolean shouldAddToBackStack) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(getFragmentContainerId(), fragment, tag);
+        if (shouldAddToBackStack) transaction.addToBackStack(null);
+        transaction.commitAllowingStateLoss();
+    }
+
+    public void showFragmentWithAnimation(BaseFragment fragment, String tag, int enterAnim, int exitAnim, boolean shouldAddToBackStack) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(enterAnim, exitAnim);
+        transaction.add(getFragmentContainerId(), fragment, tag);
+        if (shouldAddToBackStack) transaction.addToBackStack(null);
+        transaction.commitAllowingStateLoss();
+    }
+
+    public void showFragmentWithAnimation(BaseFragment fragment, String tag, int enterAnim, int exitAnim, int popEnter, int popExit, boolean shouldAddToBackStack) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(enterAnim, exitAnim, popEnter, popExit);
+        transaction.add(getFragmentContainerId(), fragment, tag);
+        if (shouldAddToBackStack) transaction.addToBackStack(null);
+        transaction.commitAllowingStateLoss();
+    }
 }
