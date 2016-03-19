@@ -36,7 +36,7 @@ public class CanvasFactory {
         return this;
     }
 
-    public CanvasFactory drawCreatureCollection(List<Creature> creatures) {
+    public CanvasFactory drawCreatureCollection(List<? extends Creature> creatures) {
         for (Creature creature : creatures) {
             canvas.drawBitmap(creature.getBitmap(), creature.getX(), creature.getY(), null);
         }
