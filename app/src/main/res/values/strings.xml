@@ -2,6 +2,15 @@
     <string name="app_name">LPG</string>
     <string name="start.screen.text">Gotowy do nauki?\n Zaczynajmy!</string>
     <string name="start.screen.button">Start</string>
+    <string name="history.part1">Świat potrzebuje pomocy… Znowu.
+        Wielkie Zło planuje po raz kolejny zniszczyć ludzkość.
+        Tym razem namieszało nieźle w czasie. Wyobrażasz sobie?
+        Pewnego wieczora ludzie poszli spać, a następnego ranka okazało się, że znowu jest ten sam dzień.
+        Potem przeniosło ich dwa dni do tyłu, a jeszcze dalej nagle z zimy zrobiła się jesień… Ale nikt nie wiedział którego roku.</string>
+    <string name="history.part2">
+        Zapanował chaos. Zostałeś wybrany przeze mnie, Wielką Wolę Wszechświata, aby zatrzymać to szaleństwo.
+        Dzięki tej Klepsydrze będziesz mógł podróżować w czasie i przestrzeni, aby gonić Wielkie Zło.
+        Niech znów zapanuje Liniowość Czasu! W drogę!</string>
     <string-array name="polish_elements">
         <item>powietrze</item>
         <item>ogień</item>
