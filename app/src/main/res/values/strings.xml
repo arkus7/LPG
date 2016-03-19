@@ -18,6 +18,15 @@
         <item>ziemia</item>
         <item>woda</item>
     </string-array>
+    <string-array name="polish_random_elements">
+        <item>powietrze</item>
+        <item>ogień</item>
+        <item>ziemia</item>
+        <item>woda</item>
+        <item>bonzai</item>
+        <item>drzewo</item>
+        <item>umywalka</item>
+    </string-array>
     <string-array name="polish_colours">
         <item>biały</item>
         <item>czarny</item>
@@ -226,7 +235,6 @@
         <item>にんにく</item>
         <item>すいか</item>
     </string-array>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="elements.game.question">Czy pamiętasz jak wyglądał %1$s?</string>
 </resources>
