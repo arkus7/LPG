@@ -237,4 +237,6 @@
     </string-array>
 
     <string name="elements.game.question">Czy pamiętasz jak wyglądał %1$s?</string>
+    <string name="elements.game.bad.answer">"Prawidłowa odpowiedź to %1$s"</string>
+    <string name="button.next">Dalej</string>
 </resources>
