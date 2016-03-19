@@ -11,17 +11,17 @@
         android:id="@+id/rpg_fight_surface_view" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:text="Apple"
         android:id="@+id/answer1"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/answer4"
-        android:layout_toStartOf="@+id/answer4" />
+        android:layout_alignBottom="@+id/answer3" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:text="Orange"
         android:id="@+id/answer4"
         android:layout_below="@+id/answer1"
@@ -29,8 +29,8 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:text="Banana"
         android:id="@+id/answer3"
         android:layout_alignParentTop="true"
@@ -38,11 +38,11 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
         android:text="Peach"
         android:id="@+id/answer2"
         android:layout_below="@+id/answer1"
         android:layout_toLeftOf="@+id/answer4"
-        android:layout_toStartOf="@+id/answer4" />
+        android:layout_alignBottom="@+id/answer4" />
 </RelativeLayout>
