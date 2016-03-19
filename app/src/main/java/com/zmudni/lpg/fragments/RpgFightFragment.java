@@ -151,17 +151,17 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     @Override
     public void init() {
-        fruitsEn = Arrays.asList(getResources().getStringArray(R.array.english));
-        fruitsPl = Arrays.asList(getResources().getStringArray(R.array.polish));
+        fruitsEn = Arrays.asList(getResources().getStringArray(R.array.english_fruitvege));
+        fruitsPl = Arrays.asList(getResources().getStringArray(R.array.polish_fruitvege));
         entity = new Entity(0,0,BitmapFactory.decodeResource(getResources(),R.mipmap.apple));
         player = new Player(1000,400, BitmapFactory.decodeResource(getResources(), R.mipmap.player1),"Shir",10);
         enemies = new ArrayList<>();
         timer = new Timer();
 
         currentEnemy = 0;
-        enemies.add(new Monster(100, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemysnail1), 15, 10, "Slime", 2, "apple", 50));
-        enemies.add(new Monster(200, enemies.get(0).getY()+enemies.get(0).getBitmap().getHeight()+15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemysnail1), 15, 10, "Wolf", 2, "peach", 50));
-        enemies.add(new Monster(300, enemies.get(1).getY()+enemies.get(1).getBitmap().getHeight()+15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemysnail1), 15, 10, "Scorpion", 2, "banana", 50));
+        enemies.add(new Monster(100, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 15, 10, "Slime", 2, "apple", 50));
+        enemies.add(new Monster(200, enemies.get(0).getY()+enemies.get(0).getBitmap().getHeight()+15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 15, 10, "Wolf", 2, "peach", 50));
+        enemies.add(new Monster(300, enemies.get(1).getY()+enemies.get(1).getBitmap().getHeight()+15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 15, 10, "Scorpion", 2, "banana", 50));
 
         surfaceView.getHolder().addCallback(this);
     }
