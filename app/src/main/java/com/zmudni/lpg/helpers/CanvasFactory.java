@@ -6,6 +6,7 @@ import android.graphics.Paint;
 
 import com.zmudni.lpg.CircleObject;
 import com.zmudni.lpg.Creature;
+import com.zmudni.lpg.Monster;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class CanvasFactory {
         return this;
     }
 
-    public CanvasFactory drawCreatureCollection(List<Creature> creatures) {
+    public CanvasFactory drawCreatureCollection(List<Monster> creatures) {
         for (Creature creature : creatures) {
             canvas.drawBitmap(creature.getBitmap(), creature.getX(), creature.getY(), null);
         }
