@@ -21,22 +21,17 @@ public abstract class BaseActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setWindowToFullscreenMode();
         setContentView(getLayout());
         ButterKnife.bind(this);
         init();
     }
 
-    private void setWindowToFullscreenMode() {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-    }
-
-    public void showFragment(BaseFragment fragment, String tag) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(getFragmentContainerId(), fragment, tag);
-        transaction.commitAllowingStateLoss();
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getFragments() != null && getSupportFragmentManager().getFragments().size() == 1)
+            finish();
+        else
+            super.onBackPressed();
     }
 
     public void runActivity(Class<?> className) {
