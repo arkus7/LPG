@@ -1,18 +1,13 @@
 package com.zmudni.lpg.activities;
 
 import com.zmudni.lpg.R;
-import com.zmudni.lpg.fragments.CatchColorCirclesFragment;
-import com.zmudni.lpg.fragments.RpgFightFragment;
-import com.zmudni.lpg.fragments.StartScreenFragment;
+import com.zmudni.lpg.fragments.SplashFragment;
 
 public class MainActivity extends BaseActivity {
 
     @Override
-
-    //        showFragment(new CatchColorCirclesFragment(), CatchColorCirclesFragment.TAG);
-
     protected void init() {
-        showFragment(new StartScreenFragment(), CatchColorCirclesFragment.TAG, false);
+        showFragment(new SplashFragment(), "", false);
     }
 
     @Override
