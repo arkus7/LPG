@@ -14,6 +14,6 @@ public class ElementsGameFragment extends BaseFragment {
 
     @Override
     public void init() {
-
+        showFragment(new RpgFightFragment(), "", true);
     }
 }
