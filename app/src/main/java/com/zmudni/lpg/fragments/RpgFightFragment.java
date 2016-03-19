@@ -3,14 +3,11 @@ package com.zmudni.lpg.fragments;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 
-import com.zmudni.lpg.CircleObject;
 import com.zmudni.lpg.Entity;
 import com.zmudni.lpg.Monster;
 import com.zmudni.lpg.Player;
@@ -44,10 +41,12 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     private Player player;
     private Entity entity;
     private List<Monster> enemies;
-    private List<String> fruitsEn;
-    private List<String> fruitsPl;
+    private List<String> elementsEn;
+    private List<String> elemntsPl;
     private List<String> fruitsDe;
     private List<String> fruitsJp;
+    //private List<Integer> usedIndexes;
+    //private List<Integer> deletedEnemies;
     private int currentEnemy;
     Timer timer;
     protected int currentAnswerTime = 0;
@@ -62,21 +61,49 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
             currentAnswerTime = 0;
         } else {
             monster.attack(player);
-        }
-        if (monster.getHeathPoints() <= 0){
-            enemies.remove(currentEnemy);
             currentAnswerTime = 0;
         }
+        if (monster.getHeathPoints() <= 0){
+            //deletedEnemies.add(currentEnemy);
+            enemies.remove(currentEnemy);
+
+        }
+//        if(enemies.size()== 1 && enemies.get(0).getHeathPoints() > player.getDamage()*2){
+//            int index = randomIndex(0,fruitsDe.size()-1,usedIndexes);
+//            int firstOfDeleted = deletedEnemies.get(enemies.size()-1);
+//            switch (firstOfDeleted){
+//                case 0:
+//                    enemies.add(new Monster(250, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 11, 10, elemntsPl.get(index).toLowerCase(), 2, elementsEn.get(index).toLowerCase(), 25));
+//                    answer1.setText(enemies.get(1).getName());
+//                    break;
+//                case 1:
+//                    enemies.add(new Monster(100, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime1), 22, 20, elemntsPl.get(index).toLowerCase(), 3, elementsEn.get(index).toLowerCase(), 50));
+//                    answer2.setText(enemies.get(1).getName());
+//                    break;
+//                case 2:
+//                    enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(1).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime2), 33, 25, elemntsPl.get(index).toLowerCase(), 4, elementsEn.get(index).toLowerCase(), 75));
+//                    answer3.setText(enemies.get(1).getName());
+//                    break;
+//                case 3:
+//                    enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 40, 10, elemntsPl.get(index).toLowerCase(), 2, elementsEn.get(index).toLowerCase(), 25));
+//                    answer4.setText(enemies.get(1).getName());
+//                    answer4.setText(enemies.get(1).getName());
+//                    break;
+//            }
+//
+//
+//        }
+
         if (player.getHeathPoints() <= 0){
             player.died();
             endFightDraw(surfaceView.getHolder(), false);
         }
-
         if(!enemies.isEmpty() && player.getHeathPoints() > 0) {
             currentEnemy++;
             currentEnemy = currentEnemy % enemies.size();
             FightDraw(surfaceView.getHolder());
         } else if (player.getHeathPoints() > 0){
+            timer.cancel();
             endFightDraw(surfaceView.getHolder(), true);
         }
 
@@ -97,7 +124,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     }
 
     public void endFightDraw(SurfaceHolder holder,boolean won){
-        if ( won == true) {
+        if (won) {
             Canvas canvas = new CanvasFactory(holder.lockCanvas())
                     .setBackgroundColor(getResources().getColor(R.color.color_button)).setText("You win", 400, 400, 80).build();
             holder.unlockCanvasAndPost(canvas);
@@ -107,6 +134,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
             holder.unlockCanvasAndPost(canvas);
         }
         timer.cancel();
+
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -119,37 +147,6 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     }
 
-    protected void drawDamage(SurfaceHolder holder){
-        Paint paint = new Paint();
-        CircleObject c1 = new CircleObject(enemies.get(currentEnemy).getX(),enemies.get(currentEnemy).getX(),null,5);
-        switch(animationPart){
-            case 0:
-                animationPart++;
-                paint.setColor(Color.BLUE);
-
-                Canvas canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
-                holder.unlockCanvasAndPost(canvas);
-                break;
-            case 1:
-                animationPart++;
-                paint.setColor(Color.CYAN);
-                canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
-                holder.unlockCanvasAndPost(canvas);
-                break;
-            case 2:
-                animationPart++;
-                paint.setColor(Color.RED);
-                canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
-                holder.unlockCanvasAndPost(canvas);
-                break;
-            case 3:
-                animationPart++;
-                paint.setColor(Color.GREEN);
-                canvas = new CanvasFactory(holder.lockCanvas()).drawCircleObject(c1,paint).build();
-                holder.unlockCanvasAndPost(canvas);
-                break;
-        }
-    }
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
@@ -159,7 +156,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
         this.FightDraw(surfaceView.getHolder());
-        timer.scheduleAtFixedRate(new DelayTimeTimerTask(),1000,1000);
+        timer.scheduleAtFixedRate(new DelayTimeTimerTask(),0,1000);
     }
 
     @Override
@@ -196,11 +193,13 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     @Override
     public void init() {
-        fruitsEn = Arrays.asList(getResources().getStringArray(R.array.english_fruits_and_vegetable));
-        fruitsPl = Arrays.asList(getResources().getStringArray(R.array.polish_fruits_and_vegetable));
+        elementsEn = Arrays.asList(getResources().getStringArray(R.array.english_elements));
+        elemntsPl = Arrays.asList(getResources().getStringArray(R.array.polish_elements));
         fruitsDe = Arrays.asList(getResources().getStringArray(R.array.german_fruits_and_vegetable));
         fruitsJp = Arrays.asList(getResources().getStringArray(R.array.japanese_fruits_and_vegetable));
         enemies = new ArrayList<>();
+        //usedIndexes = new ArrayList<>();
+        //deletedEnemies = new ArrayList<>();
         timer = new Timer();
         createEntities();
 
@@ -209,24 +208,33 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     private void createEntities() {
         entity = new Entity(0,0,BitmapFactory.decodeResource(getResources(),R.mipmap.pointer));
-        player = new Player(950,350, BitmapFactory.decodeResource(getResources(), R.mipmap.player1),"Shir",10);
-        int index = randomIndex(0,fruitsDe.size()-1);
+        player = new Player(950,350, BitmapFactory.decodeResource(getResources(), R.mipmap.player1),"TestPlayer");
+
+        int index = randomIndex(0, elemntsPl.size()-1);
         currentEnemy = 0;
-        enemies.add(new Monster(250, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 30, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
+        enemies.add(new Monster(250, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 11, 10, elemntsPl.get(index).toLowerCase(), 2, elementsEn.get(index).toLowerCase(), 25));
         answer1.setText(enemies.get(0).getName());
-        index = randomIndex(0,fruitsDe.size()-1);
-        enemies.add(new Monster(100, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime1), 50, 20, fruitsPl.get(index).toLowerCase(), 5, fruitsEn.get(index).toLowerCase(), 100));
+
+        index = randomIndex(0, elemntsPl.size()-1);
+        enemies.add(new Monster(100, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime1), 22, 20, elemntsPl.get(index).toLowerCase(), 3, elementsEn.get(index).toLowerCase(), 50));
         answer2.setText(enemies.get(1).getName());
-        index = randomIndex(0,fruitsDe.size()-1);
-        enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(1).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime2), 60, 25, fruitsPl.get(index).toLowerCase(), 4, fruitsEn.get(index).toLowerCase(), 150));
+
+        index = randomIndex(0, elemntsPl.size()-1);
+        enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(1).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime2), 33, 25, elemntsPl.get(index).toLowerCase(), 4, elementsEn.get(index).toLowerCase(), 75));
         answer3.setText(enemies.get(2).getName());
-        index = randomIndex(0,fruitsDe.size()-1);
-        enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 30, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
+
+        index = randomIndex(0, elemntsPl.size()-1);
+        enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 50, 10, elemntsPl.get(index).toLowerCase(), 2, elementsEn.get(index).toLowerCase(), 25));
         answer4.setText(enemies.get(3).getName());
     }
 
     private int randomIndex(int min,int max){
-        return min + (int)(Math.random() * ((max - min) + 1));
+        //int i = min + (int)(Math.random() * ((max - min) + 1));
+        //while(list.contains(i)){
+            return min + (int)(Math.random() * ((max - min) + 1)); //i =
+        //}
+        //list.add(i);
+        //return i;
     }
 
     class DelayTimeTimerTask extends TimerTask{

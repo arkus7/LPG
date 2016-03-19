@@ -19,8 +19,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="@dimen/image.size"
+                android:layout_height="@dimen/image.size"
                 android:src="@mipmap/wielkawolawszechswiata"/>
 
             <TextView
@@ -43,8 +43,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/image.size"
+                    android:layout_height="@dimen/image.size"
                     android:src="@mipmap/air"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -61,8 +61,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/image.size"
+                    android:layout_height="@dimen/image.size"
                     android:src="@mipmap/water"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -79,8 +79,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/image.size"
+                    android:layout_height="@dimen/image.size"
                     android:src="@mipmap/fire"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,8 +97,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="@dimen/image.size"
+                    android:layout_height="@dimen/image.size"
                     android:src="@mipmap/earth"/>
                 <TextView
                     android:layout_width="wrap_content"
