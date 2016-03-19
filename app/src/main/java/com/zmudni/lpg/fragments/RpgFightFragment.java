@@ -49,9 +49,14 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     protected int currentAnswerTime = 0;
     protected final int maxAnswerTime = 10;
 
+    protected void drawDamage(SurfaceHolder holder){
+
+    }
+
     public void checkAnswer(Monster monster, String answer, Player player) {
         if (monster.getName().toLowerCase().equalsIgnoreCase(answer)) {
             player.attack(monster);
+
             currentAnswerTime = 0;
         } else {
             monster.attack(player);
@@ -79,7 +84,7 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     public void FightDraw(SurfaceHolder holder){
         if(!enemies.isEmpty()){
             Canvas canvas = new Canvas();
-            canvas = new CanvasFactory(holder.lockCanvas()).setBackgroundColor(getResources().getColor(R.color.colorPrimary))
+            canvas = new CanvasFactory(holder.lockCanvas()).setBackgroudImage(BitmapFactory.decodeResource(getResources(),R.mipmap.meadow))
                     .drawCreature(player)
                     .drawCreatureCollection(enemies,currentEnemy,entity)
                     .build();
@@ -172,16 +177,16 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
         player = new Player(950,350, BitmapFactory.decodeResource(getResources(), R.mipmap.player1),"Shir",10);
         int index = randomIndex(0,fruitsDe.size()-1);
         currentEnemy = 0;
-        enemies.add(new Monster(250, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemysnail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
+        enemies.add(new Monster(250, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
         answer1.setText(enemies.get(0).getName());
         index = randomIndex(0,fruitsDe.size()-1);
-        enemies.add(new Monster(100, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemysnail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
+        enemies.add(new Monster(100, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
         answer2.setText(enemies.get(1).getName());
         index = randomIndex(0,fruitsDe.size()-1);
-        enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(1).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemysnail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
+        enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(1).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
         answer3.setText(enemies.get(2).getName());
         index = randomIndex(0,fruitsDe.size()-1);
-        enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemysnail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
+        enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 15, 10, fruitsPl.get(index).toLowerCase(), 2, fruitsEn.get(index).toLowerCase(), 50));
         answer4.setText(enemies.get(3).getName());
     }
 
