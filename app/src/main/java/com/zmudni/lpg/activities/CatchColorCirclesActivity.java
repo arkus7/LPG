@@ -7,7 +7,7 @@ public class CatchColorCirclesActivity extends BaseActivity {
 
     @Override
     protected void init() {
-        showFragment(new CatchColorCirclesFragment(), "TAG");
+        showFragment(new CatchColorCirclesFragment(), "TAG", false);
     }
 
     @Override

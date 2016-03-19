@@ -35,8 +35,15 @@ public abstract class BaseFragment extends Fragment {
         ButterKnife.unbind(this);
     }
 
-    public void showFragment(BaseFragment fragment, String tag) {
-        ((BaseActivity)getActivity()).showFragment(fragment, tag);
+    public void showFragment(BaseFragment fragment, String tag, boolean shouldAddToBackStack) {
+        ((BaseActivity)getActivity()).showFragment(fragment, tag, shouldAddToBackStack);
     }
 
+    public void showFragmentWithAnimation(BaseFragment fragment, String tag, int enterAnim, int exitAnim, boolean shouldAddToBackStack) {
+        ((BaseActivity)getActivity()).showFragmentWithAnimation(fragment, tag, enterAnim, exitAnim, shouldAddToBackStack);
+    }
+
+    public void showFragmentWithEnterAndPopAnimation(BaseFragment fragment, String tag, int enterAnim, int exitAnim, int popEnter, int popExit, boolean shouldAddToBackStack) {
+        ((BaseActivity)getActivity()).showFragmentWithAnimation(fragment, tag, enterAnim, exitAnim, popEnter, popExit, shouldAddToBackStack);
+    }
 }
