@@ -2,13 +2,13 @@
     <string name="app_name">LPG</string>
     <string name="start.screen.text">Gotowy do nauki?\n Zaczynajmy!</string>
     <string name="start.screen.button">Start</string>
-    <string-array name="polish.elements">
+    <string-array name="polish_elements">
         <item>powietrze</item>
         <item>ogień</item>
         <item>ziemia</item>
         <item>woda</item>
     </string-array>
-    <string-array name="polish.colours">
+    <string-array name="polish_colours">
         <item>biały</item>
         <item>czarny</item>
         <item>czerwony</item>
@@ -25,7 +25,7 @@
         <item>granatowy</item>
     </string-array>
 
-    <string-array name="polish.fruitvege">
+    <string-array name="polish_fruits_and_vegetable">
         <item>jabłko</item>
         <item>gruszka</item>
         <item>wiśnia</item>
@@ -55,14 +55,14 @@
         <item>arbuz</item>
     </string-array>
 
-    <string-array name="english.elements">
+    <string-array name="english_elements">
         <item>air</item>
         <item>fire</item>
         <item>earth</item>
         <item>water</item>
     </string-array>
 
-    <string-array name="english.colours">
+    <string-array name="english_colours">
         <item>white</item>
         <item>black</item>
         <item>red</item>
@@ -79,7 +79,7 @@
         <item>navy blue</item>
  </string-array>
 
-<string-array name="english.fruitvege">
+<string-array name="english_fruits_and_vegetable">
         <item>apple</item>
         <item>pear</item>
         <item>cherry</item>
@@ -109,14 +109,14 @@
         <item>watermelon</item>
     </string-array>
 
-    <string-array name="german.elements">
+    <string-array name="german_elements">
         <item>die Luft</item>
         <item>das Feuer</item>
         <item>die Erde</item>
         <item>das Wasser</item>
     </string-array>
 
-    <string-array name="german.colours">
+    <string-array name="german_colours">
         <item>weiß</item>
         <item>schwarz</item>
         <item>rot</item>
@@ -133,7 +133,7 @@
         <item>dunkelblau</item>
     </string-array>
 
-    <string-array name="german.fruitvege">
+    <string-array name="german_fruits_and_vegetable">
         <item>der Apfel</item>
         <item>die Birne</item>
         <item>die Kiersche</item>
@@ -163,14 +163,14 @@
         <item>die Wassermelone</item>
     </string-array>
 
-    <string-array name="japanese.elements">
+    <string-array name="japanese_elements">
         <item>くうき</item>
         <item>ひ</item>
         <item>ち</item>
         <item>みず</item>
     </string-array>
 
-    <string-array name="japanese.colours">
+    <string-array name="japanese_colours">
         <item>しろ</item>
         <item>くろ</item>
         <item>あか</item>
@@ -187,7 +187,7 @@
         <item>こん</item>
     </string-array>
 
-    <string-array name="japanese.fruitvege">
+    <string-array name="japanese_fruits_and_vegetable">
         <item>りんご</item>
         <item>ペア</item>
         <item>さくらんぼ</item>
