@@ -49,7 +49,6 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     private List<String> fruitsJp;
     private int currentEnemy;
     Timer timer;
-    Timer timer2;
     protected int currentAnswerTime = 0;
     protected final int maxAnswerTime = 10;
     protected int animationPart = 4;
@@ -59,8 +58,6 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
     public void checkAnswer(Monster monster, String answer, Player player) {
         if (monster.getName().toLowerCase().equalsIgnoreCase(answer)) {
             player.attack(monster);
-            animationPart = 0;
-            timer.scheduleAtFixedRate(new DelayTimeTimerTask(), 0, 1000);
             currentAnswerTime = 0;
         } else {
             monster.attack(player);
@@ -244,12 +241,4 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
         }
     }
 
-    class damageAnimationTimerTask extends TimerTask{
-
-        @Override
-        public void run() {
-                drawDamage(surfaceView.getHolder());
-
-        }
-    }
 }

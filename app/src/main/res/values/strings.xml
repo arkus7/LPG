@@ -87,9 +87,9 @@
         <item>beige</item>
         <item>brown</item>
         <item>navy blue</item>
- </string-array>
+    </string-array>
 
-<string-array name="english_fruits_and_vegetable">
+    <string-array name="english_fruits_and_vegetable">
         <item>apple</item>
         <item>pear</item>
         <item>cherry</item>
@@ -226,4 +226,7 @@
         <item>にんにく</item>
         <item>すいか</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
