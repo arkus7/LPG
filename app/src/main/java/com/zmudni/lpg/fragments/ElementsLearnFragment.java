@@ -19,7 +19,6 @@ public class ElementsLearnFragment extends BaseFragment {
     @OnClick(R.id.next_part_button)
     public void onNextPartButtonClick() {
         showFragment(new ElementsGameFragment(), "", true);
-        //todo: hadnle next part
     }
 
     private Timer timer;
