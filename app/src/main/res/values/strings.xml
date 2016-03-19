@@ -23,8 +23,8 @@
         <item>ogień</item>
         <item>ziemia</item>
         <item>woda</item>
-        <item>bonzai</item>
-        <item>drzewo</item>
+        <item>gaśica</item>
+        <item>świecznik</item>
         <item>umywalka</item>
     </string-array>
     <string-array name="polish_colours">
@@ -235,6 +235,6 @@
         <item>にんにく</item>
         <item>すいか</item>
     </string-array>
-    
+
     <string name="elements.game.question">Czy pamiętasz jak wyglądał %1$s?</string>
 </resources>
