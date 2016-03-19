@@ -14,7 +14,7 @@ public class StartScreenFragment extends BaseFragment {
 
     @OnClick(R.id.start_screen_button)
     public void onStartButtonClick() {
-        showFragment(new MapFragment(), "MapFragment", false);
+        showFragment(new MapFragment(), "MapFragment", true);
     }
 
     @Override
