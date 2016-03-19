@@ -12,7 +12,8 @@
         Dzięki tej Klepsydrze będziesz mógł podróżować w czasie i przestrzeni, aby gonić Wielkie Zło.
         Niech znów zapanuje Liniowość Czasu! W drogę!</string>
     <string name="history.part3">Podstawą istnienia naszego świata są cztery żywioły. Ich znajomość jest konieczna, żeby walczyć przeciwko Wielkiemu Złu. Zapamiętaj je teraz.</string>
-    <string name="Failed">Ogarnia cię nieprzenikniona ciemność i...</string>
+    <string name="DutyFailed">Ogarnia cię nieprzenikniona ciemność i...</string>
+    <string name="DutyWon"> Gratuluję! Właśnie zrobiłeś swój pierwszy krok w tej przygodzie. Kolejne landy czekają na Twoją pomoc. Nie zwlekaj, ruszaj w drogę!</string>
     <string-array name="polish_elements">
         <item>powietrze</item>
         <item>ogień</item>
@@ -238,4 +239,7 @@
     </string-array>
 
     <string name="elements.game.question">Czy pamiętasz jak wyglądał %1$s?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
