@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:text="@string/history.part1"
+            android:textSize="@dimen/bubble.text.size"
             android:id="@+id/history_bubble"
             android:background="@drawable/bubble_white"/>
     </LinearLayout>
@@ -37,6 +38,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="30dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="20dp"
         android:visibility="gone"/>
 </RelativeLayout>
