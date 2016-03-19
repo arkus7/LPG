@@ -82,35 +82,11 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
                 }});
         }
         if (monster.getHeathPoints() <= 0){
-            //deletedEnemies.add(currentEnemy);
+
             enemies.remove(currentEnemy);
 
         }
-//        if(enemies.size()== 1 && enemies.get(0).getHeathPoints() > player.getDamage()*2){
-//            int index = randomIndex(0,fruitsDe.size()-1,usedIndexes);
-//            int firstOfDeleted = deletedEnemies.get(enemies.size()-1);
-//            switch (firstOfDeleted){
-//                case 0:
-//                    enemies.add(new Monster(250, 50, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 11, 10, elemntsPl.get(index).toLowerCase(), 2, elementsEn.get(index).toLowerCase(), 25));
-//                    answer1.setText(enemies.get(1).getName());
-//                    break;
-//                case 1:
-//                    enemies.add(new Monster(100, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime1), 22, 20, elemntsPl.get(index).toLowerCase(), 3, elementsEn.get(index).toLowerCase(), 50));
-//                    answer2.setText(enemies.get(1).getName());
-//                    break;
-//                case 2:
-//                    enemies.add(new Monster(300, enemies.get(1).getY() + enemies.get(1).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_slime2), 33, 25, elemntsPl.get(index).toLowerCase(), 4, elementsEn.get(index).toLowerCase(), 75));
-//                    answer3.setText(enemies.get(1).getName());
-//                    break;
-//                case 3:
-//                    enemies.add(new Monster(500, enemies.get(0).getY() + enemies.get(0).getBitmap().getHeight() + 15, BitmapFactory.decodeResource(getResources(), R.mipmap.enemy_snail1), 40, 10, elemntsPl.get(index).toLowerCase(), 2, elementsEn.get(index).toLowerCase(), 25));
-//                    answer4.setText(enemies.get(1).getName());
-//                    answer4.setText(enemies.get(1).getName());
-//                    break;
-//            }
-//
-//
-//        }
+
 
         if (player.getHeathPoints() <= 0){
             player.died();
@@ -143,28 +119,14 @@ public class RpgFightFragment extends BaseFragment implements SurfaceHolder.Call
 
     public void endFightDraw(SurfaceHolder holder,boolean won){
 
-        timer.cancel();
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                answer1.setVisibility(View.GONE);
-                answer2.setVisibility(View.GONE);
-                answer3.setVisibility(View.GONE);
-                answer4.setVisibility(View.GONE);
-            }
-        });
         if (won) {
-            Canvas canvas = new CanvasFactory(holder.lockCanvas())
-                    .setBackgroundColor(getResources().getColor(R.color.color_button)).setText("You win", 400, 400, 80).build();
-            holder.unlockCanvasAndPost(canvas);
-            timer.cancel();
-        } else {
-            Canvas canvas = new CanvasFactory(holder.lockCanvas())
-                    .setBackgroundColor(getResources().getColor(R.color.color_button)).setText("You lose",400,400,80).build();
-            holder.unlockCanvasAndPost(canvas);
             timer.cancel();
             getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
-            showFragment(new MapFragment(), "", false);
+            showFragment(new WonFragment(), "", false);
+        } else {
+            timer.cancel();
+            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+            showFragment(new FailedFragment(), "", false);
         }
 
     }
