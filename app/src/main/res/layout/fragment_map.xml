@@ -21,14 +21,14 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/island1"/>
+            android:src="@mipmap/island1szare"/>
         <android.support.v4.widget.Space
             android:layout_width="160dp"
             android:layout_height="1dp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/island3"/>
+            android:src="@mipmap/island3szare"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,21 +40,21 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/island4"/>
+            android:src="@mipmap/island4szare"/>
         <android.support.v4.widget.Space
             android:layout_width="130dp"
             android:layout_height="1dp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/island5"/>
+            android:src="@mipmap/island5szare"/>
         <android.support.v4.widget.Space
             android:layout_width="150dp"
             android:layout_height="1dp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/island6"/>
+            android:src="@mipmap/island6szary"/>
     </LinearLayout>
 </LinearLayout>
 </HorizontalScrollView>
