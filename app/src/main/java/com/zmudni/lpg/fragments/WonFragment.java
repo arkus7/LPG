@@ -33,7 +33,7 @@ public class WonFragment extends BaseFragment {
 
     @Override
     public int getLayout() {
-        return R.layout.fragment_failed;
+        return R.layout.fragment_won;
     }
 
     @Override
