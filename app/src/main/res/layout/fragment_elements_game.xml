@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bubble_white"
-            android:text="Czy pamiętasz jak wyglądał: ?"
+            android:text="@string/elements.game.question"
             android:textSize="@dimen/bubble.text.size"
             android:layout_gravity="center_vertical"/>
 
